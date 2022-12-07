@@ -1,23 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Formdata from './Formdata';
+import Displaydata from './Displaydata';
 
 function App() {
+
+  const myApi = [
+    {
+      id : 1,
+      name : 'Usama',
+      email : 'Usama@gmail.com',
+      phone : '0300000000',
+
+    },
+    {
+      id : 2,
+      name : 'Ahmed',
+      email : 'Ahmeda@gmail.com',
+      phone : '0300000000',
+
+    },
+    {
+      id : 3,
+      name : 'John',
+      email : 'john@gmail.com',
+      phone : '030011111',
+
+    },
+    {
+      id : 4,
+      name : 'David',
+      email : 'David@gmail.com',
+      phone : '030022222',
+
+    },
+    {
+      id : 5,
+      name : 'Ali',
+      email : 'Ali@gmail.com',
+      phone : '03555656',
+
+    },
+  
+
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-6'>
+
+            <Formdata/>
+
+          </div>
+          <div className='col-md-6'>
+
+            <Displaydata />
+
+          </div>
+
+        </div>
+      </div>
     </div>
   );
 }
