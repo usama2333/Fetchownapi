@@ -1,20 +1,31 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-function Formdata() {
+function Formdata(props) {
+
+  const [handle,setHandle] = useState();
+  const handleInput = (event) =>{
+    const {name , value} = event.target;
+    setHandle({...handle,[name]:value});
+    console.log(handle);
+  }
   return (
     <div>
         <h1 className='text-center display-3 mt-3'>Enter form data </h1>
-        <form>
+        <form onSubmit={(e)=>{
+          e.preventDefault();
+          props.myuser(handle);
+        }}
+        >
             <label>Name</label>
-            <input type="text" className = "form-control shadow" />
+            <input onChange={handleInput} type="text" className = "form-control shadow" name = "name" />
 
             <label>Email</label>
-            <input type="email" className = "form-control shadow" />
+            <input onChange={handleInput} type="email" className = "form-control shadow" name = "email" />
 
             <label>Phone</label>
-            <input type="text" className = "form-control shadow" />
+            <input onChange={handleInput} type="number" className = "form-control shadow" name = "phone"/>
 
-            <input  type= "submit" className='btn btn-outline-primary mt-5' />
+            <input  type= "submit" className='btn btn-outline-primary mt-5' name = "phone" />
 
         </form>
       

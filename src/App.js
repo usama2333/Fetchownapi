@@ -46,7 +46,13 @@ function App() {
   ]
 
   const [data , setData] = useState(myApi);
-  console.log(data);
+  // console.log(data);
+
+  const myuser = (person)=>{
+    // console.log('Button clicked');
+    person.id = data.length +1;
+    setData([...data,person]);
+  }
 
 
   return (
@@ -55,7 +61,7 @@ function App() {
         <div className='row'>
           <div className='col-md-6'>
 
-            <Formdata/>
+            <Formdata myuser = {myuser}/>
 
           </div>
           <div className='col-md-6'>
