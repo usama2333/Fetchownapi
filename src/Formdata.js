@@ -12,7 +12,7 @@ function Formdata() {
             <input type="email" className = "form-control shadow" />
 
             <label>Phone</label>
-            <input type="number" className = "form-control shadow" />
+            <input type="text" className = "form-control shadow" />
 
             <input  type= "submit" className='btn btn-outline-primary mt-5' />
 

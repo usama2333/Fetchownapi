@@ -1,6 +1,7 @@
 
 import Formdata from './Formdata';
 import Displaydata from './Displaydata';
+import { useState } from 'react';
 
 function App() {
 
@@ -43,6 +44,11 @@ function App() {
   
 
   ]
+
+  const [data , setData] = useState(myApi);
+  console.log(data);
+
+
   return (
     <div className="App">
       <div className='container'>
@@ -54,7 +60,7 @@ function App() {
           </div>
           <div className='col-md-6'>
 
-            <Displaydata />
+            <Displaydata sendData = {data}/>
 
           </div>
 
