@@ -45,6 +45,8 @@ function App() {
 
   ]
 
+
+
   const [data , setData] = useState(myApi);
   // console.log(data);
 
@@ -54,6 +56,10 @@ function App() {
     setData([...data,person]);
   }
 
+  const del = (id) => {
+    setData(data.filter((pro)=>pro.id !== id));
+
+  }
 
   return (
     <div className="App">
@@ -66,7 +72,7 @@ function App() {
           </div>
           <div className='col-md-6'>
 
-            <Displaydata sendData = {data}/>
+            <Displaydata sendData = {data} del = {del}/>
 
           </div>
 
